@@ -26,8 +26,10 @@ class Questions {
 
 		if (change >= 3000 || cardOrNoCard == true) {
 			System.out.println("택시를 탄다.");
+		} else if (change < 3000 && cardOrNoCard == false) {
+			System.out.println("걸어간다.");			
 		} else {
-			System.out.println("걸어간다.");
+			System.out.println("숫자만 입력해주세요.");
 		}
 	}
 
@@ -78,12 +80,29 @@ class Questions {
 //		}
 		
 		if (hi<=3) {
-			for (int i=0; i<hi; i++) {
-				System.out.println("안녕");
+			if (hi==0) {
+				System.out.println("잘가");
+			} else {
+				for (int i=1; i<=hi; i++) {
+					System.out.println("안녕");
+				}
 			}
 		} else {
 			System.out.println("잘가");
 		}
+		            //0  0
+//		for (int i=0; i<=hi; i++) {
+//			if (hi<=3) {
+//				if(i==0) {
+//					System.out.println("잘가");
+//				} else {
+//					System.out.println("안녕");					
+//				}
+//			} else {
+//				System.out.println("잘가");
+//				break;
+//			}
+//		}
 	}
 }
 
