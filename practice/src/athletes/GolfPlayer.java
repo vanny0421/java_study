@@ -12,5 +12,4 @@ public class GolfPlayer implements Athletes {
 	public void play() {
 		System.out.println("골프선수는 " + ball + "을 가지고 운동한다.");
 	}
-
 }
