@@ -1,4 +1,4 @@
-package practice;
+package foodCourt;
 
 class SirloinDonkatsu {
 	String fried;
