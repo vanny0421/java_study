@@ -17,6 +17,11 @@ public class Bus4312 {
 		bus.out(sunggoo);
 		bus.in(manchoo);
 		
+		bus.out(manchoo);
+	
+		bus.in(sunggoo);
+		
+		bus.out(latte);
 		
 	}
 }
