@@ -17,9 +17,9 @@ public class TOUSlesJOURS implements BakeryFactory {
 	}
 	
 	public void checkBreadStand(Bread[] tjBreadStand) {
-		System.out.println("\n🍞🥐🥨뚜레주르🥯🥖🫓\n");
+		System.out.println("　🍞🥐🥨뚜레주르🥯🥖🫓\n");
 		if (index == 0) {
-			System.out.println("　　빵이 없습니다 ㅠㅠ");
+			System.out.println("　　빵이 없습니다 ㅠㅠ\n");
 		} else {
 			for (int i = 0; i < this.index; i++) {
 				if (breadStand[i].bread == null) {
@@ -31,11 +31,12 @@ public class TOUSlesJOURS implements BakeryFactory {
 				}
 			}
 		}
+		System.out.println();
 	}
 
 	@Override
 	public void sellBread(Bread bread) {
-//		System.out.println(bread.bread + "이 " + bread.breadPrice + "원에 팔렸습니다.");
+		System.out.println("　뚜레주르 " + bread.bread + "이 " + bread.breadPrice + "원에 팔렸습니다.\n");
 		bread.bread = null;
 	}
 }
