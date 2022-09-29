@@ -2,55 +2,54 @@ package questions;
 
 public class Child {
 
-	int ballCnt ;
-	
-	public Child( int ballCnt ) {
-		
-		this.ballCnt = ballCnt >= 0 ? ballCnt : 0 ;
-		
+	int marbleCnt;
+
+	public Child(int marbleCnt) {
+		if (marbleCnt >= 0) {
+			this.marbleCnt = marbleCnt;
+		} else {
+			this.marbleCnt = 0;
+		}
 	}
 	
-	void earnBalls( Child enemy , int ballCnt ) {
+	void earnMarble(Child child, int cnt) {
+		int earnedMarbleCnt;
 		
-		int earnedBallsCnt = enemy.ballCnt >= ballCnt ? ballCnt : enemy.ballCnt ;
+		if (child.marbleCnt >= cnt) {
+			earnedMarbleCnt = cnt;
+		} else {
+			earnedMarbleCnt = child.marbleCnt;
+		}
 		
-		this.ballCnt += earnedBallsCnt ;
+		this.marbleCnt += earnedMarbleCnt;
 		
-		enemy.loseBalls( earnedBallsCnt );
-		
+		child.loseMarble(earnedMarbleCnt);
 	}
 	
-	void loseBalls( int ballCnt ) {
-		
-		this.ballCnt -= ballCnt ;
-		
+	void loseMarble(int lostCnt) {
+		this.marbleCnt -= lostCnt;
 	}
 	
-	void printBalances( Child enemy ) {
-		
-		System.out.println("--------갱신--------\n");
-		
-		System.out.println( "어린이1 구슬 : " + this.ballCnt );
-		
-		System.out.println( "어린이2 구슬 : " + enemy.ballCnt );
-		
+	void checkMarble(Child child) {
+		System.out.println("---------------------------");
+		System.out.println("어린이1 갖고있는 구슬 개수 : " + this.marbleCnt);
+		System.out.println("어린이2 갖고있는 구슬 개수 : " + child.marbleCnt);
 	}
 	
 	public static void main(String[] args) {
 		
-		Child ch1 = new Child( 15 ) ;
+		Child child1 = new Child(15);
+		Child child2 = new Child(9);
 		
-		Child ch2 = new Child( 9 ) ;
+		child1.checkMarble(child2);
 		
-		ch1.printBalances(ch2);
+		child1.earnMarble(child2, 2);
 		
-		ch1.earnBalls( ch2 , 2 );
+		child1.checkMarble(child2);
 		
-		ch1.printBalances(ch2);
+		child2.earnMarble(child1, 7);
 		
-		ch2.earnBalls( ch1 , 7 );
-		
-		ch1.printBalances(ch2);
-		
+		child1.checkMarble(child2);
 	}
 }
+
