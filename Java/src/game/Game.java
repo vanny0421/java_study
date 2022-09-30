@@ -32,20 +32,23 @@ public class Game {
 		input = sc.next();
 		
 		int random = (int) Math.floor(Math.random() * 3);
-	
-		for(int i=0; i<players.length; i++) {
-			if (players[0].bet[i].equals(input)) {
-				System.out.println(computer + ">> 결정하였습니다.");
-				System.out.println(owner + " : " + input + ", " + computer + " : " + players[1].bet[random]);
-				
+		
+		while (true) {
+			for(int i=0; i<players.length; i++) {
+				if (players[0].bet[i].equals(input)) {
+					System.out.println(computer + ">> 결정하였습니다.");
+				} 
+			}
+			System.out.println(owner + " : " + input + ", " + computer + " : " + players[1].bet[random] + "\n");
+			
+			if (input.equals(players[1].bet[random])) {
+				System.out.println(owner + "이 이겼습니다.");
+				System.out.println("게임을 종료합니다.\n");
 				break;
+				
 			} else {
 				System.out.println("묵, 찌, 빠 중에서 입력하세요");
 				input = sc.next();
-			}
-			if (input.equals(random)) {
-				System.out.println(owner + "이 이겼습니다.");
-				System.out.println("게임을 종료합니다.");
 				continue;
 			}
 		}
