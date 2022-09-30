@@ -1,6 +1,6 @@
-package popQuiz;
+package quiz01;
 
-public class pop01 {
+public class Quiz01_2 {
 
 	/*
 	 * 1.
@@ -39,7 +39,7 @@ public class pop01 {
 
 	public static void main(String[] args) {
 
-		pop01 quiz = new pop01();
+		Quiz01_2 quiz = new Quiz01_2();
 
 		quiz.Q1(); // 1번 문제 실행
 		quiz.Q2(); // 2번 문제 실행

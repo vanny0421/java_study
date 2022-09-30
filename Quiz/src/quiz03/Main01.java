@@ -1,50 +1,45 @@
 package quiz03;
 
+import java.util.Scanner;
+/*
+ *  7. main 메서드를 포함하는 클래스를 생성 한다.(10점)
+ *  
+ *  8. 2개의 정수를 입력 받는다.(10점)
+ *  
+ *  9. 입력 받은 정수를 각각 출력 한다.(10점)
+ *  
+ *  10. main 메서드에서 Calc 클래스 객체 생성시 본인의 이름을 매개변수 값으로 넘긴다.(5점)
+ *  
+ *  11. main 메서드에서 본인의 이름을 출력한다.(5점)
+ *  
+ *  12. Calc 클래스 객체를 사용하여 plus, minus 메소드를 사용하여 사칙 연산 결과를 각각 출력 한다.(10점)
+ *  
+ *  13. Calc 클래스 객체를 사용하여 times, divide 메소드를 사용하여 사칙 연산 결과를 각각 출력 한다.(10점)
+ */
 public class Main01 {
-
-	public static void main(String[] args) {
-		// 4. arr 배열에 DanceRobot, SingRobot, DrawRobot 객체 생성
-		// (소프트웨어 공학기술의 요구사항 도출 기법을 활용하여 업무 분석가가 제시한 분석모델에 대해서 확인할 수 있다.10)
-		Robot[] arr = { new DanceRobot(), new SingRobot(), new DrawRobot() };
-
-		for(int i=0; i< arr.length;i++) {
-			// 5. 반복문을 통해서 action() 메서드 호출
-			// (업무 분석가가 제시한 분석모델이 개발할 응용소프트웨어에 미칠 영향을 검토하여 기술적인 타당성 조사를 할 수 있다.10)
-			action(arr[i]);
-		}
-
-	}
 	
-	public static void action(Robot r) {
-		// 6. 파라미터로 넘어온 객체 r이 DanceRobot인지 체크  
-		// (업무 분석가가 제시한 분석모델에 대해서 응용소프트웨어를 개발하기 위해 필요한 추가적인 의견을 제시할 수 있다.10)
-		if(r instanceof DanceRobot) {
-			// 7. r 객체를 DanceRobot 으로 명시적 객체 형변환한다.
-			//(소프트웨어 공학기술의 요구사항 분석 기법을 활용하여 업무 분석가가 정의한 응용소프트웨어의 요구사항을 확인할 수 있다.3)
-			DanceRobot dr = (DanceRobot)r;
-			// 8. dance() 호출
-			//(	개발하고자 하는 응용소프트웨어와 관련된 운영체제ㆍ데이터베이스관리시스템ㆍ미들웨어 등의 요구사항을 식별할 수 있다.3)
-			dr.dance();
-		// 9. 파라미터로 넘어온 객체 r이 SingRobot인지 체크
-		// (업무 분석가가 제시한 분석모델에 대해서 응용소프트웨어를 개발하기 위해 필요한 추가적인 의견을 제시할 수 있다.10)
-		} else if(r instanceof SingRobot) {
-			// 10. r 객체를 SingRobot 으로 명시적 객체 형변환한다.
-			//(소프트웨어 공학기술의 요구사항 분석 기법을 활용하여 업무 분석가가 정의한 응용소프트웨어의 요구사항을 확인할 수 있다.3)
-			SingRobot sr = (SingRobot)r;
-			// 11. sing() 호출
-			//(	개발하고자 하는 응용소프트웨어와 관련된 운영체제ㆍ데이터베이스관리시스템ㆍ미들웨어 등의 요구사항을 식별할 수 있다.3)
-			sr.sing();
-		// 12. 파라미터로 넘어온 객체 r이 DrawRobot인지 체크
-		// (업무 분석가가 제시한 분석모델에 대해서 응용소프트웨어를 개발하기 위해 필요한 추가적인 의견을 제시할 수 있다.10)
-		} else if(r instanceof DrawRobot) {
-			// 13. r 객체를 DrawRobot 으로 명시적 객체 형변환한다.
-			//(소프트웨어 공학기술의 요구사항 분석 기법을 활용하여 업무 분석가가 정의한 응용소프트웨어의 요구사항을 확인할 수 있다.3)
-			DrawRobot dr = (DrawRobot)r;
-			// 14. draw() 호출
-			//(	개발하고자 하는 응용소프트웨어와 관련된 운영체제ㆍ데이터베이스관리시스템ㆍ미들웨어 등의 요구사항을 식별할 수 있다.5)
-			dr.draw();
-		}
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("1번 정수 : ");
+		int num1 = sc.nextInt();
+		System.out.println("2번 정수 : ");
+		int num2 = sc.nextInt();
+		System.out.println("------출력------");
+		System.out.println("1번 정수 = " + num1);
+		System.out.println("2번 정수 = " + num2);
+		
+		
+		System.out.println("---------------");
+		Calc calc = new Calc("김이영");		
+		System.out.println("이름 : " + calc.getName());
+		
+		System.out.println("---------------");
+		
+		System.out.println("10 + 2 = " + calc.plus(10, 2));
+		System.out.println("10 - 2 = " + calc.minus(10, 2));
+		System.out.println("10 * 2 = " + calc.times(10, 2));
+		System.out.println("10 / 2 = " + calc.divide(10, 2));
 	}
-
-
 }

@@ -1,4 +1,4 @@
-package quiz03;
+package quiz05;
 
 public class SingRobot extends Robot {
 	void sing() {

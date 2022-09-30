@@ -1,4 +1,4 @@
-package quiz03;
+package quiz05;
 
 public class DrawRobot extends Robot {
 	void draw() {
