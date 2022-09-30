@@ -1,9 +1,7 @@
 package condition;
 
-import java.util.Iterator;
-
 public class Main08 {
-
+	
 	public static void main(String[] args) {
 		/*
 		 * 1. 만약 3000원 이상의 돈을 가지고 있다면 택시를 타고, 
